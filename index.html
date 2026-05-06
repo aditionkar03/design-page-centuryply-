@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CenturyPly</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: "var(--background)",
+            foreground: "var(--foreground)",
+            cream: "var(--cream)",
+            beige: "var(--beige)",
+            sand: "var(--sand)",
+            wood: "var(--wood)",
+            "wood-dark": "var(--wood-dark)",
+            ink: "var(--ink)",
+            gold: "var(--gold)",
+            red: "var(--red)",
+            primary: "var(--primary)",
+            accent: "var(--accent)"
+          },
+          fontFamily: {
+            display: ['Fraunces', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="min-h-screen bg-background text-foreground">
+
+  <!-- Navbar -->
+  <header class="fixed top-0 inset-x-0 z-50 transition-all duration-500 bg-black/70 backdrop-blur-xl border-b border-white/5 py-3">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <a href="#home" class="flex items-center group">
+        <img src="assets/centuryply.png" alt="CenturyPly" class="h-8 w-auto object-contain" />
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#home" class="underline-slide text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">Home</a>
+        <a href="#free-design" class="underline-slide text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">Free Design</a>
+        <a href="#experience" class="underline-slide text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">Experience 3D</a>
+        <a href="#videos" class="underline-slide text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">Videos</a>
+        <a href="#about" class="underline-slide text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">About</a>
+      </nav>
+
+      <div class="hidden md:flex items-center">
+        <img src="assets/proclub.png" alt="Pro Club" class="h-16 w-auto object-contain" />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-ink">
+      <img src="assets/BG1.jpeg" class="hero-slide absolute inset-0 w-full h-full object-cover transition-all duration-[1600ms] opacity-100 scale-100 z-10">
+      <img src="assets/BG2.jpeg" class="hero-slide absolute inset-0 w-full h-full object-cover transition-all duration-[1600ms] opacity-0 scale-110 z-0">
+      <img src="assets/BG3.jpeg" class="hero-slide absolute inset-0 w-full h-full object-cover transition-all duration-[1600ms] opacity-0 scale-110 z-0">
+      <img src="assets/BG4.jpeg" class="hero-slide absolute inset-0 w-full h-full object-cover transition-all duration-[1600ms] opacity-0 scale-110 z-0">
+      <img src="assets/BG5.jpeg" class="hero-slide absolute inset-0 w-full h-full object-cover transition-all duration-[1600ms] opacity-0 scale-110 z-0">
+      
+      <div class="absolute inset-0 bg-black/55 z-10"></div>
+      
+      <h1 class="reveal-up relative z-20 text-center font-sans font-bold uppercase tracking-widest text-white px-6 leading-[0.9] text-balance" style="font-size: clamp(2rem, 6vw, 6rem)">
+        3D Design<br />Services
+      </h1>
+
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+        <button class="hero-dot h-1.5 rounded-full transition-all duration-500 w-10 bg-gold" aria-label="Slide 1"></button>
+        <button class="hero-dot h-1.5 rounded-full transition-all duration-500 w-4 bg-cream/40" aria-label="Slide 2"></button>
+        <button class="hero-dot h-1.5 rounded-full transition-all duration-500 w-4 bg-cream/40" aria-label="Slide 3"></button>
+        <button class="hero-dot h-1.5 rounded-full transition-all duration-500 w-4 bg-cream/40" aria-label="Slide 4"></button>
+        <button class="hero-dot h-1.5 rounded-full transition-all duration-500 w-4 bg-cream/40" aria-label="Slide 5"></button>
+      </div>
+    </section>
+
+    <!-- CenterCTA -->
+    <section id="free-design" class="py-32 px-6">
+      <div class="reveal-up max-w-3xl mx-auto text-center">
+        <h2 class="font-display text-4xl md:text-6xl font-light leading-tight text-balance">
+          For Free 3D Design Service ask your contractor Mr. &lt;Name&gt; Pro Club &lt;Tier&gt; member
+        </h2>
+
+        <button class="mt-12 wave-btn inline-flex items-center gap-3 px-10 py-5 rounded-full text-cream text-lg font-medium transition-transform hover:scale-[1.04] active:scale-95">
+          Click here to enroll for 3D Design Service
+          <span class="inline-block">→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- SplitInputOutput -->
+    <section id="experience" class="py-24 md:py-32 px-6 bg-background">
+      <div class="max-w-7xl mx-auto flex flex-col items-center">
+        <div class="reveal-down text-center mb-16">
+          <h2 class="font-display text-4xl md:text-5xl font-light leading-tight text-balance text-cream capitalize">
+            Experience 3D Design Project
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+          <!-- Card 1 (Video) -->
+          <div class="reveal-up flex flex-col bg-[#161616] rounded-2xl overflow-hidden cursor-pointer group shadow-lg border border-white/5 open-video-btn" data-video-src="https://www.youtube.com/embed/0G1F9LX2Je8?autoplay=1">
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="https://img.youtube.com/vi/0G1F9LX2Je8/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/0G1F9LX2Je8/hqdefault.jpg'" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-[68px] h-[48px] bg-[#FF0000] rounded-xl flex items-center justify-center group-hover:bg-[#E60000] transition-colors duration-300 shadow-lg">
+                  <svg class="w-8 h-8 text-white fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                </div>
+              </div>
+            </div>
+            <div class="p-6 flex flex-col items-center justify-center text-center flex-1">
+              <h3 class="text-white font-bold text-lg leading-snug">3D design service - How to Win More Projects</h3>
+            </div>
+          </div>
+          <!-- Card 2 (PPT) -->
+          <div class="reveal-up reveal-delay-1 flex flex-col bg-[#161616] rounded-2xl overflow-hidden cursor-pointer group shadow-lg border border-white/5" onclick="window.open('1.pdf', '_blank')">
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="1.jpg" onerror="this.src='https://via.placeholder.com/800x600/333/fff?text=PPT+Preview'" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+            </div>
+            <div class="p-6 flex flex-col items-center justify-center text-center flex-1">
+              <h3 class="text-white font-bold text-lg leading-snug">View Living Room PPT</h3>
+            </div>
+          </div>
+          <!-- Card 3 (PPT) -->
+          <div class="reveal-up reveal-delay-2 flex flex-col bg-[#161616] rounded-2xl overflow-hidden cursor-pointer group shadow-lg border border-white/5" onclick="window.open('2.pdf', '_blank')">
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="2.jpg" onerror="this.src='https://via.placeholder.com/800x600/333/fff?text=PPT+Preview'" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+            </div>
+            <div class="p-6 flex flex-col items-center justify-center text-center flex-1">
+              <h3 class="text-white font-bold text-lg leading-snug">View Bedroom PPT</h3>
+            </div>
+          </div>
+          <!-- Card 4 (PPT) -->
+          <div class="reveal-up reveal-delay-3 flex flex-col bg-[#161616] rounded-2xl overflow-hidden cursor-pointer group shadow-lg border border-white/5" onclick="window.open('3.pdf', '_blank')">
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="3.jpg" onerror="this.src='https://via.placeholder.com/800x600/333/fff?text=PPT+Preview'" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+            </div>
+            <div class="p-6 flex flex-col items-center justify-center text-center flex-1">
+              <h3 class="text-white font-bold text-lg leading-snug">View Kitchen PPT</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SplitAbout -->
+    <section id="videos" class="py-24 md:py-32 px-6 bg-ink">
+      <div class="max-w-7xl mx-auto flex flex-col items-center">
+        <div id="about" class="reveal-down text-center mb-16">
+          <h2 class="font-display text-4xl md:text-5xl font-light leading-tight text-balance text-cream">
+            Experience Video of 3d design service
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+          <!-- Video 1 -->
+          <div class="reveal-up relative aspect-square rounded-2xl overflow-hidden cursor-pointer group shadow-lg border border-white/10 open-video-btn" data-video-src="https://www.youtube.com/embed/2ovnjl7Xwpw?autoplay=1">
+            <img src="https://img.youtube.com/vi/2ovnjl7Xwpw/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/2ovnjl7Xwpw/hqdefault.jpg'" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-[68px] h-[48px] bg-[#FF0000] rounded-xl flex items-center justify-center group-hover:bg-[#E60000] transition-colors duration-300 shadow-lg">
+                <svg class="w-8 h-8 text-white fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+              </div>
+            </div>
+          </div>
+          <!-- Video 2 -->
+          <div class="reveal-up reveal-delay-1 relative aspect-square rounded-2xl overflow-hidden cursor-pointer group shadow-lg border border-white/10 open-video-btn" data-video-src="https://www.youtube.com/embed/uzgPN5cpGgk?autoplay=1">
+            <img src="https://img.youtube.com/vi/uzgPN5cpGgk/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/uzgPN5cpGgk/hqdefault.jpg'" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-[68px] h-[48px] bg-[#FF0000] rounded-xl flex items-center justify-center group-hover:bg-[#E60000] transition-colors duration-300 shadow-lg">
+                <svg class="w-8 h-8 text-white fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+              </div>
+            </div>
+          </div>
+          <!-- Video 3 -->
+          <div class="reveal-up reveal-delay-2 relative aspect-square rounded-2xl overflow-hidden cursor-pointer group shadow-lg border border-white/10 open-video-btn" data-video-src="https://www.youtube.com/embed/2MYJ-9YrS5c?autoplay=1">
+            <img src="https://img.youtube.com/vi/2MYJ-9YrS5c/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/2MYJ-9YrS5c/hqdefault.jpg'" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-[68px] h-[48px] bg-[#FF0000] rounded-xl flex items-center justify-center group-hover:bg-[#E60000] transition-colors duration-300 shadow-lg">
+                <svg class="w-8 h-8 text-white fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-ink text-cream opacity-80 pt-8 pb-12 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex flex-wrap items-center gap-6 text-sm">
+        <a href="#" class="underline-slide">Home</a>
+        <a href="#" class="underline-slide">Free Design</a>
+        <a href="#" class="underline-slide">Experience 3D</a>
+        <a href="#" class="underline-slide">Videos</a>
+        <a href="#" class="underline-slide">About</a>
+      </div>
+      <div class="text-sm text-cream opacity-50 text-center md:text-right">
+        © 2026 CenturyPly. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Video Modal Dialog -->
+  <dialog id="video-modal" class="bg-transparent m-auto p-0 border-none w-full max-w-4xl h-[80vh] md:h-auto md:aspect-video rounded-2xl overflow-hidden backdrop:bg-black/80">
+    <div class="relative w-full h-full bg-black">
+      <button id="close-video-modal" class="absolute -top-12 right-0 text-white/70 hover:text-white transition-colors bg-black/50 p-2 rounded-full z-10 hidden md:block">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <button onclick="document.getElementById('video-modal').close(); document.getElementById('video-iframe').src='';" class="absolute top-4 right-4 text-white/70 hover:text-white transition-colors bg-black/50 p-2 rounded-full z-10 md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <iframe id="video-iframe" src="" class="w-full h-full border-0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </dialog>
+
+</body>
+</html>
