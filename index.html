@@ -40,9 +40,12 @@
   <!-- Navbar -->
   <header class="fixed top-0 inset-x-0 z-50 transition-all duration-500 bg-black/70 backdrop-blur-xl border-b border-white/5 py-3">
     <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-      <a href="#home" class="flex items-center group">
-        <img src="assets/centuryply.png" alt="CenturyPly" class="h-8 w-auto object-contain" />
-      </a>
+      <!-- Left side: CenturyPly logo -->
+      <div class="flex items-center">
+        <a href="#home" class="flex items-center group">
+          <img src="assets/centuryply.png" alt="CenturyPly" class="h-10 md:h-12 w-auto object-contain" />
+        </a>
+      </div>
 
       <nav class="hidden md:flex items-center gap-8">
         <a href="#home" class="underline-slide text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">Home</a>
@@ -52,11 +55,37 @@
         <a href="#about" class="underline-slide text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">About</a>
       </nav>
 
-      <div class="hidden md:flex items-center">
-        <img src="assets/proclub.png" alt="Pro Club" class="h-16 w-auto object-contain" />
+      <!-- Right side: ProClub logo & Mobile Menu Button -->
+      <div class="flex items-center gap-5 md:gap-0">
+        <div class="flex items-center">
+          <img src="assets/proclub.png" alt="Pro Club" class="h-14 md:h-20 w-auto object-contain" />
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center relative w-10 h-10 ml-2">
+          <svg id="hamburger-icon" class="w-8 h-8 text-white absolute transition-opacity duration-300 opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+          <div id="close-icon" class="w-8 h-8 bg-white border-2 border-[#D32F2F] flex items-center justify-center absolute transition-opacity duration-300 opacity-0 pointer-events-none">
+            <svg class="w-6 h-6 text-[#D32F2F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </div>
+        </button>
       </div>
     </div>
   </header>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="fixed top-[60px] right-0 bottom-0 w-[240px] bg-black/95 backdrop-blur-xl border-l border-white/5 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden z-40">
+    <nav class="flex flex-col pt-12 px-8 gap-8 items-end">
+      <a href="#home" class="text-xl font-medium text-white hover:text-accent transition-colors mobile-link">Home</a>
+      <a href="#free-design" class="text-xl font-medium text-white hover:text-accent transition-colors mobile-link">Free Design</a>
+      <a href="#experience" class="text-xl font-medium text-white hover:text-accent transition-colors mobile-link">Experience 3D</a>
+      <a href="#videos" class="text-xl font-medium text-white hover:text-accent transition-colors mobile-link">Videos</a>
+      <a href="#about" class="text-xl font-medium text-white hover:text-accent transition-colors mobile-link">About</a>
+    </nav>
+  </div>
 
   <main>
     <!-- Hero -->
@@ -106,49 +135,44 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
-          <!-- Card 1 (Video) -->
-          <div class="reveal-up flex flex-col bg-[#161616] rounded-2xl overflow-hidden cursor-pointer group shadow-lg border border-white/5 open-video-btn" data-video-src="https://www.youtube.com/embed/0G1F9LX2Je8?autoplay=1">
+          <!-- Card 1 (PPT) -->
+          <div class="reveal-up flex flex-col bg-[#161616] rounded-2xl overflow-hidden cursor-pointer group shadow-lg border border-white/5" onclick="window.open('1.pdf', '_blank')">
             <div class="relative aspect-[4/3] overflow-hidden">
-              <img src="https://img.youtube.com/vi/0G1F9LX2Je8/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/0G1F9LX2Je8/hqdefault.jpg'" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <img src="1.jpg" onerror="this.src='https://via.placeholder.com/800x600/333/fff?text=Project+1+Preview'" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
               <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="w-[68px] h-[48px] bg-[#FF0000] rounded-xl flex items-center justify-center group-hover:bg-[#E60000] transition-colors duration-300 shadow-lg">
-                  <svg class="w-8 h-8 text-white fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-                </div>
-              </div>
             </div>
             <div class="p-6 flex flex-col items-center justify-center text-center flex-1">
-              <h3 class="text-white font-bold text-lg leading-snug">3D design service - How to Win More Projects</h3>
+              <h3 class="text-white font-bold text-lg leading-snug">View Project 1</h3>
             </div>
           </div>
           <!-- Card 2 (PPT) -->
-          <div class="reveal-up reveal-delay-1 flex flex-col bg-[#161616] rounded-2xl overflow-hidden cursor-pointer group shadow-lg border border-white/5" onclick="window.open('1.pdf', '_blank')">
+          <div class="reveal-up reveal-delay-1 flex flex-col bg-[#161616] rounded-2xl overflow-hidden cursor-pointer group shadow-lg border border-white/5" onclick="window.open('2.pdf', '_blank')">
             <div class="relative aspect-[4/3] overflow-hidden">
-              <img src="1.jpg" onerror="this.src='https://via.placeholder.com/800x600/333/fff?text=PPT+Preview'" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <img src="2.jpg" onerror="this.src='https://via.placeholder.com/800x600/333/fff?text=Project+2+Preview'" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
               <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
             </div>
             <div class="p-6 flex flex-col items-center justify-center text-center flex-1">
-              <h3 class="text-white font-bold text-lg leading-snug">View Living Room PPT</h3>
+              <h3 class="text-white font-bold text-lg leading-snug">View Project 2</h3>
             </div>
           </div>
           <!-- Card 3 (PPT) -->
-          <div class="reveal-up reveal-delay-2 flex flex-col bg-[#161616] rounded-2xl overflow-hidden cursor-pointer group shadow-lg border border-white/5" onclick="window.open('2.pdf', '_blank')">
+          <div class="reveal-up reveal-delay-2 flex flex-col bg-[#161616] rounded-2xl overflow-hidden cursor-pointer group shadow-lg border border-white/5" onclick="window.open('3.pdf', '_blank')">
             <div class="relative aspect-[4/3] overflow-hidden">
-              <img src="2.jpg" onerror="this.src='https://via.placeholder.com/800x600/333/fff?text=PPT+Preview'" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <img src="3.jpg" onerror="this.src='https://via.placeholder.com/800x600/333/fff?text=Project+3+Preview'" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
               <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
             </div>
             <div class="p-6 flex flex-col items-center justify-center text-center flex-1">
-              <h3 class="text-white font-bold text-lg leading-snug">View Bedroom PPT</h3>
+              <h3 class="text-white font-bold text-lg leading-snug">View Project 3</h3>
             </div>
           </div>
           <!-- Card 4 (PPT) -->
-          <div class="reveal-up reveal-delay-3 flex flex-col bg-[#161616] rounded-2xl overflow-hidden cursor-pointer group shadow-lg border border-white/5" onclick="window.open('3.pdf', '_blank')">
+          <div class="reveal-up reveal-delay-3 flex flex-col bg-[#161616] rounded-2xl overflow-hidden cursor-pointer group shadow-lg border border-white/5" onclick="window.open('4.pdf', '_blank')">
             <div class="relative aspect-[4/3] overflow-hidden">
-              <img src="3.jpg" onerror="this.src='https://via.placeholder.com/800x600/333/fff?text=PPT+Preview'" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <img src="4.jpg" onerror="this.src='https://via.placeholder.com/800x600/333/fff?text=Project+4+Preview'" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
               <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
             </div>
             <div class="p-6 flex flex-col items-center justify-center text-center flex-1">
-              <h3 class="text-white font-bold text-lg leading-snug">View Kitchen PPT</h3>
+              <h3 class="text-white font-bold text-lg leading-snug">View Project 4</h3>
             </div>
           </div>
         </div>
@@ -164,35 +188,38 @@
           </h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
-          <!-- Video 1 -->
-          <div class="reveal-up relative aspect-square rounded-2xl overflow-hidden cursor-pointer group shadow-lg border border-white/10 open-video-btn" data-video-src="https://www.youtube.com/embed/2ovnjl7Xwpw?autoplay=1">
-            <img src="https://img.youtube.com/vi/2ovnjl7Xwpw/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/2ovnjl7Xwpw/hqdefault.jpg'" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
-            <div class="absolute inset-0 flex items-center justify-center">
-              <div class="w-[68px] h-[48px] bg-[#FF0000] rounded-xl flex items-center justify-center group-hover:bg-[#E60000] transition-colors duration-300 shadow-lg">
-                <svg class="w-8 h-8 text-white fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl">
+          <!-- Video 1 (English) -->
+          <!-- Video 1 (English) -->
+<div class="reveal-up flex flex-col bg-[#161616] rounded-2xl overflow-hidden shadow-lg border border-white/10 cursor-pointer group open-video-btn" data-video-url="https://www.youtube.com/watch?v=0G1F9LX2Je8">
+            <div class="relative aspect-video overflow-hidden">
+              <img src="https://img.youtube.com/vi/0G1F9LX2Je8/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/0G1F9LX2Je8/hqdefault.jpg'" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+              <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div class="w-[68px] h-[48px] bg-[#FF0000] rounded-xl flex items-center justify-center group-hover:bg-[#E60000] transition-colors duration-300 shadow-lg">
+                  <svg class="w-8 h-8 text-white fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                </div>
               </div>
             </div>
-          </div>
-          <!-- Video 2 -->
-          <div class="reveal-up reveal-delay-1 relative aspect-square rounded-2xl overflow-hidden cursor-pointer group shadow-lg border border-white/10 open-video-btn" data-video-src="https://www.youtube.com/embed/uzgPN5cpGgk?autoplay=1">
-            <img src="https://img.youtube.com/vi/uzgPN5cpGgk/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/uzgPN5cpGgk/hqdefault.jpg'" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
-            <div class="absolute inset-0 flex items-center justify-center">
-              <div class="w-[68px] h-[48px] bg-[#FF0000] rounded-xl flex items-center justify-center group-hover:bg-[#E60000] transition-colors duration-300 shadow-lg">
-                <svg class="w-8 h-8 text-white fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-              </div>
+            <div class="p-6 flex flex-col items-center justify-center text-center flex-1 gap-5">
+              <h3 class="text-white font-bold text-xl leading-snug">3D Design service - Watch in English</h3>
             </div>
           </div>
-          <!-- Video 3 -->
-          <div class="reveal-up reveal-delay-2 relative aspect-square rounded-2xl overflow-hidden cursor-pointer group shadow-lg border border-white/10 open-video-btn" data-video-src="https://www.youtube.com/embed/2MYJ-9YrS5c?autoplay=1">
-            <img src="https://img.youtube.com/vi/2MYJ-9YrS5c/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/2MYJ-9YrS5c/hqdefault.jpg'" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
-            <div class="absolute inset-0 flex items-center justify-center">
-              <div class="w-[68px] h-[48px] bg-[#FF0000] rounded-xl flex items-center justify-center group-hover:bg-[#E60000] transition-colors duration-300 shadow-lg">
-                <svg class="w-8 h-8 text-white fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+
+          <!-- Video 2 (Hindi) -->
+          <!-- Video 2 (Hindi) -->
+<div class="reveal-up reveal-delay-1 flex flex-col bg-[#161616] rounded-2xl overflow-hidden shadow-lg border border-white/10 cursor-pointer group open-video-btn" data-video-url="https://www.youtube.com/watch?v=m2qLtA5Il5s">
+            <div class="relative aspect-video overflow-hidden">
+              <img src="https://img.youtube.com/vi/m2qLtA5Il5s/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/m2qLtA5Il5s/hqdefault.jpg'" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+              <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div class="w-[68px] h-[48px] bg-[#FF0000] rounded-xl flex items-center justify-center group-hover:bg-[#E60000] transition-colors duration-300 shadow-lg">
+                  <svg class="w-8 h-8 text-white fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                </div>
               </div>
+            </div>
+            <div class="p-6 flex flex-col items-center justify-center text-center flex-1 gap-5">
+              <h3 class="text-white font-bold text-xl leading-snug">3D Design service - हिंदी  में  देखें</h3>
             </div>
           </div>
         </div>
@@ -226,7 +253,7 @@
       <button onclick="document.getElementById('video-modal').close(); document.getElementById('video-iframe').src='';" class="absolute top-4 right-4 text-white/70 hover:text-white transition-colors bg-black/50 p-2 rounded-full z-10 md:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
-      <iframe id="video-iframe" src="" class="w-full h-full border-0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <iframe id="video-iframe" src="" class="w-full h-full border-0" allow="autoplay; encrypted-media" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </div>
   </dialog>
 

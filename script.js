@@ -51,15 +51,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const videoIframe = document.getElementById('video-iframe');
   const closeVideoBtn = document.getElementById('close-video-modal');
 
-  document.querySelectorAll('.open-video-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const src = e.currentTarget.dataset.videoSrc;
-      if (src) {
-        videoIframe.src = src;
-        videoDialog.showModal();
-      }
-    });
+  // Video Cards — open YouTube directly in new tab
+document.querySelectorAll('.open-video-btn').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    const url = e.currentTarget.dataset.videoUrl;
+    if (url) window.open(url, '_blank', 'noopener,noreferrer');
   });
+});
 
   closeVideoBtn.addEventListener('click', () => {
     videoDialog.close();
@@ -78,4 +76,40 @@ document.addEventListener("DOMContentLoaded", () => {
       videoIframe.src = '';
     }
   });
+
+  // Mobile Menu Logic
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+  const closeIcon = document.getElementById('close-icon');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+
+  if (mobileMenuBtn) {
+    let isMenuOpen = false;
+
+    function toggleMenu() {
+      isMenuOpen = !isMenuOpen;
+      if (isMenuOpen) {
+        mobileMenu.classList.remove('translate-x-full');
+        hamburgerIcon.classList.remove('opacity-100');
+        hamburgerIcon.classList.add('opacity-0', 'pointer-events-none');
+        closeIcon.classList.remove('opacity-0', 'pointer-events-none');
+        closeIcon.classList.add('opacity-100');
+      } else {
+        mobileMenu.classList.add('translate-x-full');
+        closeIcon.classList.remove('opacity-100');
+        closeIcon.classList.add('opacity-0', 'pointer-events-none');
+        hamburgerIcon.classList.remove('opacity-0', 'pointer-events-none');
+        hamburgerIcon.classList.add('opacity-100');
+      }
+    }
+
+    mobileMenuBtn.addEventListener('click', toggleMenu);
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (isMenuOpen) toggleMenu();
+      });
+    });
+  }
 });
