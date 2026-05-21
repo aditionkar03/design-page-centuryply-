@@ -59,6 +59,18 @@ document.querySelectorAll('.open-video-btn').forEach(btn => {
   });
 });
 
+// // Video Cards — open YouTube in a small popup window
+// document.querySelectorAll('.open-video-btn').forEach(btn => {
+//   btn.addEventListener('click', (e) => {
+//     const url = e.currentTarget.dataset.videoUrl;
+//     if (!url) return;
+//     const width = 900, height = 560;
+//     const left = (screen.width - width) / 2;
+//     const top = (screen.height - height) / 2;
+//     window.open(url, 'YouTubeVideo', `width=${width},height=${height},left=${left},top=${top},resizable=yes`);
+//   });
+// });
+
   closeVideoBtn.addEventListener('click', () => {
     videoDialog.close();
     videoIframe.src = '';
